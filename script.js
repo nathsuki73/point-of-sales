@@ -1,13 +1,21 @@
 const form = document.querySelector('form')
 const formToggle = document.getElementById('toggle')
+const forget = form.querySelector('forget');
+
+let removedElement = null
 
 
-/* <div class="input-field">
-          <input type="text" name="" id="email" required>
-          <label for="email">Enter your email</label>
-        </div> */
-        
+const clearInput = () => {
+    document.getElementById('email').value = ""
+    document.getElementById('password').value = ""
+}
 const createNameInput = () => {
+    const element = form.children[3]
+    if (element) {
+        removedElement = element
+        form.removeChild(element)
+    }
+
     const newDiv = document.createElement('div')
     newDiv.classList.add('input-field')
     
@@ -25,12 +33,24 @@ const createNameInput = () => {
 
     const h2 = document.getElementById('title');
     form.insertBefore(newDiv, h2.nextSibling)
+
+    
 }
 
 const removeNameInput = () => {
+    
+
     const h2 = document.getElementById('title');
     const nameNode = h2.nextSibling
     form.removeChild(nameNode)
+
+    if (removedElement) {
+        
+        form.insertBefore(removedElement, form.children[3])
+        removedElement = null
+    }
+
+    
 }
 
 const changeForm = () => {
@@ -47,6 +67,7 @@ const changeForm = () => {
     const changeToSignup = () => {
         h2.textContent = "Sign up";
         createNameInput();
+        
         submit.textContent = "Sign up"
     }
 
@@ -68,5 +89,6 @@ window.addEventListener('load', () => {
 formToggle.addEventListener('click', () => {
     
     changeForm();
+    clearInput();
 
 })
