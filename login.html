@@ -9,7 +9,7 @@
   <body>
     <!-- login -->
     <div class="wrapper">
-      <form action="#" >
+      <form action="#" autocomplete="on">
         <h2 id="title"></h2>
         <div class="input-field">
           <input type="text" name="" id="email" required>
@@ -26,7 +26,7 @@
           </label>
           <a href="#">Forgot password?</a>
         </div>
-        <button type="submit">Log in</button>
+        <button type="submit" onsubmit="login()" >Log in</button>
         <div class="register">
           <p>Don't have an account? <a id="toggle" >Register</a></p>
         </div>
@@ -34,7 +34,7 @@
     </div>
   </body>
 
-  <script src="./script.js">
+  <script src="./login.js">
 
   </script>
 </html>

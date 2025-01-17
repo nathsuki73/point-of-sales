@@ -2,8 +2,20 @@ const form = document.querySelector('form')
 const formToggle = document.getElementById('toggle')
 const forget = form.querySelector('forget');
 
+
 let removedElement = null
 
+
+
+const login = (event) => {
+    event.preventDefault()
+    const email = document.getElementById('email')
+    const password = document.getElementById('password')
+
+    if (email.value == "tantan" && password.value == "123") {
+        window.location.href = "./index.html"
+    }
+}
 
 const clearInput = () => {
     document.getElementById('email').value = ""
@@ -54,7 +66,6 @@ const removeNameInput = () => {
 }
 
 const changeForm = () => {
-    console.log('clicked');
     const login = form.classList.toggle('login')
 
     const h2 = document.getElementById('title')
@@ -81,6 +92,7 @@ const changeForm = () => {
     }
 }
 
+form.addEventListener('submit', login)
 
 window.addEventListener('load', () => {
     changeForm();
@@ -92,3 +104,6 @@ formToggle.addEventListener('click', () => {
     clearInput();
 
 })
+
+
+
