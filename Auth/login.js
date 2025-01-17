@@ -13,7 +13,7 @@ const login = (event) => {
     const password = document.getElementById('password')
 
     if (email.value == "tantan" && password.value == "123") {
-        window.location.href = "./index.html"
+        window.location.href = "../main/index.html"
     }
 }
 

@@ -1,0 +1,38 @@
+:root {
+    --background-color: #f5f5f5;
+    
+}
+
+
+body {
+    
+    background: var(--background-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.left-button {
+    display: flex;
+    gap: 18px;
+}
+.flat-button {
+    background-color: transparent;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.flat-button:hover {
+    background-color: rgb(144, 210, 241);
+}
