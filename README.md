@@ -4,7 +4,7 @@ This project is an ordering system implemented with pure JavaScript, HTML, and C
 
 ## Features
 
-- [ ] User registration and login
+- [/] User registration and login ui
 - [ ] Product catalog browsing
 - [ ] Shopping cart management
 - [ ] Order placement and confirmation
