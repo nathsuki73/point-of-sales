@@ -12,6 +12,8 @@ button.flat-button:hover .iconamoon--menu-burger-horizontal-bold {
 }
 
 .uil--calendar {
+    padding-right: 10px;
+
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -25,6 +27,9 @@ button.flat-button:hover .uil--calendar {
 }
 
 .mingcute--time-line {
+
+        padding-right: 10px;
+
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -38,6 +43,8 @@ button.flat-button:hover .mingcute--time-line {
 }
 
 .solar--cart-large-minimalistic-outline {
+        padding-right: 10px;
+
     display: inline-block;
     width: 24px;
     height: 24px;
