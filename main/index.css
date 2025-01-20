@@ -25,6 +25,9 @@ header {
     gap: 18px;
 }
 .flat-button {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
     background-color: transparent;
     border: none;
     background-color: white;
@@ -38,3 +41,4 @@ header {
 .flat-button:hover {
     background-color: rgb(144, 210, 241);
 }
+
