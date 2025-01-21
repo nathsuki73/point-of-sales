@@ -1,0 +1,28 @@
+.slider-container {
+    position: absolute;
+    margin-top: 8px;
+}
+
+.radio-button {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-style: solid;
+    border-color: #236290e2;
+    border-width: 2px;
+    border-radius: 23px;
+}
+
+.inner-slider {
+    display: flex;
+    gap: 8px;
+
+}
+.inner-slider input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}

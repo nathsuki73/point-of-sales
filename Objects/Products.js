@@ -1,0 +1,1 @@
+// Products: pic, name, category, price

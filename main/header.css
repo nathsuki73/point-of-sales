@@ -1,11 +1,16 @@
+
+
 :root {
     --background-color: #f5f5f5;
     
 }
 
+* {
+    font-family: "Fredoka", serif;
+
+}
 
 body {
-    
     background: var(--background-color);
 }
 
