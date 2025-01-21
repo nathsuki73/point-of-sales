@@ -1,17 +1,12 @@
+const now = new Date;
+
 setInterval(() => {
-    const now = new Date;
-    let hours = now.getHours().toString().padStart(2, '0')
-    const minutes = now.getMinutes().toString().padStart(2, '0')
-    const ampm = hours >= 12 ? 'PM' : 'AM';
+    updateTime();
+    updateDate();
 
-    hours = hours % 12;
-    hours = hours ? hours: 0;
-
-    document.getElementById('time').childNodes[1].textContent = `${hours}:${minutes} ${ampm}`
 }, 1000)
 
 const updateDate = () => {
-    const now = new Date;
     const options = {
         weekday: 'short',
         day: '2-digit',
@@ -25,4 +20,16 @@ const updateDate = () => {
 
 }
 
-updateDate()
+const updateTime = () => {
+    let hours = now.getHours().toString().padStart(2, '0')
+    const minutes = now.getMinutes().toString().padStart(2, '0')
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours: 0;
+
+    document.getElementById('time').childNodes[1].textContent = `${hours}:${minutes} ${ampm}`
+
+
+}
+
