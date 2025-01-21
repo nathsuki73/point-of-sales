@@ -9,3 +9,20 @@ setInterval(() => {
 
     document.getElementById('time').childNodes[1].textContent = `${hours}:${minutes} ${ampm}`
 }, 1000)
+
+const updateDate = () => {
+    const now = new Date;
+    const options = {
+        weekday: 'short',
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+    }
+
+    const formattedDate = now.toLocaleDateString('en-GB', options)
+
+    document.getElementById('date').childNodes[1].textContent = `${formattedDate}`
+
+}
+
+updateDate()
