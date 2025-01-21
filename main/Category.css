@@ -1,5 +1,7 @@
 .slider-container {
+    overflow: hidden;
     position: absolute;
+    width: 99%;
     margin-top: 8px;
 }
 
@@ -15,12 +17,12 @@
 }
 
 .inner-slider {
+    width: 500%;
     display: flex;
     gap: 8px;
 
 }
 .inner-slider input {
-    position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
