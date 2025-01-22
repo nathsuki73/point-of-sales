@@ -7,9 +7,9 @@ let X;
 
 sliderContainer.addEventListener('mousedown', (e) => {
     pressed  = true
-    startX = e.clientX
-    console.log(`startX: ${startX}\noffsetX: ${e.offsetX}\ninnerslider offsetX: ${innerSlider.offsetX}\n`)
+    startX = e.clientX - innerSlider.style.transform.match(/-?\d+/);
     sliderContainer.style.cursor = "grabbing"
+
 })
 
 sliderContainer.addEventListener('mouseenter', () => {
@@ -21,10 +21,15 @@ sliderContainer.addEventListener('mouseup', () => {
     pressed = false;
 })
 
+
+
+
+
 sliderContainer.addEventListener('mousemove', (e) => {
     if (!pressed) return;
     e.preventDefault();
 
-    x = e.offsetX;
+    x = e.clientX;
     innerSlider.style.transform = `translateX(${x - startX}px)`;
 })
+
