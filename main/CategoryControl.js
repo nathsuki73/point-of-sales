@@ -18,12 +18,9 @@ sliderContainer.addEventListener('mouseenter', () => {
 
 sliderContainer.addEventListener('mouseup', () => {
     sliderContainer.style.cursor = "grab"
+    checkBoundary();
     pressed = false;
 })
-
-
-
-
 
 sliderContainer.addEventListener('mousemove', (e) => {
     if (!pressed) return;
@@ -33,3 +30,17 @@ sliderContainer.addEventListener('mousemove', (e) => {
     innerSlider.style.transform = `translateX(${x - startX}px)`;
 })
 
+const checkBoundary = () => {
+    let outer = sliderContainer.getBoundingClientRect();
+    let inner = innerSlider.getBoundingClientRect();
+
+    console.log(`${inner.left}`)
+console.log(`${inner.width}`)
+    if (inner.x > 0) {
+        innerSlider.style.transform = `translateX(0px)`;
+    }
+    
+    
+    
+    
+};
