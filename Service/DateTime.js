@@ -1,6 +1,7 @@
-const now = new Date;
+let now = new Date;
 
 setInterval(() => {
+    now = new Date
     updateTime();
     updateDate();
 
