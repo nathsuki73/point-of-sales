@@ -1,8 +1,6 @@
 .slider-container {
     overflow: hidden;
-    position: absolute;
-    width: 99%;
-    margin-top: 8px;
+    margin: 8px 0px;
 }
 
 .radio-button {
@@ -17,7 +15,7 @@
 }
 
 .inner-slider {
-    width: 500%;
+    width: 300%;
     display: flex;
     gap: 8px;
 
