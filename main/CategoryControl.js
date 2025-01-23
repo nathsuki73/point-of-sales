@@ -16,12 +16,25 @@ sliderContainer.addEventListener('mouseenter', () => {
     sliderContainer.style.cursor = "grab"
 })
 
+
+sliderContainer.addEventListener('mouseleave', () => {
+    pressed = false
+})
+
+
 sliderContainer.addEventListener('mouseup', () => {
     sliderContainer.style.cursor = "grab"
     pressed = false;
-    checkBoundary();
-
 })
+
+document.body.addEventListener('mouseup', () => {
+    pressed = false;
+})
+
+innerSlider.addEventListener('transitionend', () => {
+    checkBoundary();
+})
+
 
 sliderContainer.addEventListener('mousemove', (e) => {
     if (!pressed) return;
@@ -38,23 +51,14 @@ const checkBoundary = () => {
     let inner = innerSlider.getBoundingClientRect();
     const loc = (innerSlider.scrollWidth * -1) + outer.width;
 
-    console.log(`inner left:${inner.right}`)
-    console.log(`inner width:${inner.width}`)
-    console.log(`outer left:${outer.left}`)
-    console.log(`outer width:${outer.width}`)
     if (inner.x > 0 && inner.left > loc) {
         innerSlider.style.transform = `translateX(0px)`;
-        
-        
     }
 
     if (inner.left < loc && inner.x < 0) {
         console.log(`${loc} location`)
         innerSlider.style.transform = `translateX(${loc}px)`;
     }
-    
-
-    
     
 };
 
