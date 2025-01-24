@@ -62,3 +62,7 @@ const checkBoundary = () => {
     
 };
 
+// add function to make it draggable and clickable
+
+// buttons functions
+const buttons = document.querySelector('.radio-button');
