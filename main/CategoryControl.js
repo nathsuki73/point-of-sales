@@ -113,9 +113,9 @@ sliderContainer.addEventListener('mousewheel', (e) => {
     }
 
     if (e.deltaY > 0) {
-        currentValue = currentValue - buttonWidth;
+        currentValue = currentValue - buttonWidth * 2;
     } else {
-        currentValue = currentValue + buttonWidth;
+        currentValue = currentValue + buttonWidth * 2;
 
     }
     innerSlider.style.transform = `translateX(${currentValue}px)`;
@@ -127,3 +127,4 @@ sliderContainer.addEventListener('mousewheel', (e) => {
 }, {passive: true});
 
 
+// ================================== radio button event ========================
