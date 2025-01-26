@@ -1,11 +1,15 @@
 const sliderContainer = document.querySelector('.slider-container');
 const innerSlider = document.querySelector('.inner-slider');
 
+let ctrlPressed = false;
 let pressed = false;
 let startX;
 let X;
 
 sliderContainer.addEventListener('mousedown', (e) => {
+    if (!ctrlPressed) {
+        return;
+    }
     pressed  = true
     startX = e.clientX - innerSlider.style.transform.match(/-?\d+/);
     sliderContainer.style.cursor = "grabbing"
@@ -13,21 +17,33 @@ sliderContainer.addEventListener('mousedown', (e) => {
 })
 
 sliderContainer.addEventListener('mouseenter', () => {
+    if (!ctrlPressed) {
+        return;
+    }
     sliderContainer.style.cursor = "grab"
 })
 
 
 sliderContainer.addEventListener('mouseleave', () => {
+    if (!ctrlPressed) {
+        return;
+    }
     pressed = false
 })
 
 
 sliderContainer.addEventListener('mouseup', () => {
+    if (!ctrlPressed) {
+        return;
+    }
     sliderContainer.style.cursor = "grab"
     pressed = false;
 })
 
 document.body.addEventListener('mouseup', () => {
+    if (!ctrlPressed) {
+        return;
+    }
     pressed = false;
 })
 
@@ -37,6 +53,9 @@ innerSlider.addEventListener('transitionend', () => {
 
 
 sliderContainer.addEventListener('mousemove', (e) => {
+    if (!ctrlPressed) {
+        return;
+    }
     if (!pressed) return;
     e.preventDefault();
 
@@ -63,6 +82,19 @@ const checkBoundary = () => {
 };
 
 // add function to make it draggable and clickable
+document.body.addEventListener('keydown', (e) => {
+    if (e.ctrlKey) {
+        e.preventDefault();
+        ctrlPressed = true;
+    }
+})
 
+document.body.addEventListener('keyup', (e) => {
+    if (e.key == 'Control') {
+        ctrlPressed = false;
+        sliderContainer.style.cursor = "default"
+
+    }
+})
 // buttons functions
 const buttons = document.querySelector('.radio-button');
