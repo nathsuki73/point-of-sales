@@ -75,7 +75,6 @@ const checkBoundary = () => {
     }
 
     if (inner.left < loc && inner.x < 0) {
-        console.log(`${loc} location`)
         innerSlider.style.transform = `translateX(${loc}px)`;
     }
     
@@ -96,5 +95,35 @@ document.body.addEventListener('keyup', (e) => {
 
     }
 })
-// buttons functions
-const buttons = document.querySelector('.radio-button');
+// scroll function
+const buttonWidth = document.querySelector('.radio-button').offsetWidth;
+lastScrollTop = 0;
+let isThrottled = false;
+
+
+sliderContainer.addEventListener('mousewheel', (e) => {
+    if (isThrottled) return;
+    isThrottled = true;
+    
+    let currentTransform = innerSlider.style.transform;
+
+    let currentValue = 0; 
+    if (currentTransform.includes('translateX')) {
+        currentValue = parseInt(currentTransform.split('(')[1].split('px')[0]);
+    }
+
+    if (e.deltaY > 0) {
+        currentValue = currentValue - buttonWidth;
+    } else {
+        currentValue = currentValue + buttonWidth;
+
+    }
+    innerSlider.style.transform = `translateX(${currentValue}px)`;
+
+
+    setTimeout(() => {
+        isThrottled = false;
+    }, 100);
+}, {passive: true});
+
+
