@@ -128,3 +128,10 @@ sliderContainer.addEventListener('mousewheel', (e) => {
 
 
 // ================================== radio button event ========================
+const buttons = document.querySelectorAll('.radio-button');
+buttons.forEach(button => {
+    const radioBtn = button.querySelector("input")
+    button.addEventListener('click', () => {
+        radioBtn.checked = true;
+    })
+})
