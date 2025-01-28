@@ -11,14 +11,18 @@
     width: 150px;
     height: 150px;
     background-color: white;
-    border-style: solid;
-    border-color: #236290e2;
-    border-width: 2px;
+    border-color: #62ace0e2;
     border-radius: 23px;
+    transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
+
+
 }
 .radio-button:hover {
-    background-color: rgb(125, 160, 202);
+    background-color: rgb(234, 240, 247);
+    border-style: solid;
+    border-width: 2px;
     cursor: pointer;
+
 }
 
 
